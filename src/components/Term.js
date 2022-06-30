@@ -13,8 +13,11 @@ export default function Term() {
     const [dir, setdir] = React.useState({
         'grigori': []
     })
+    
 
-    return ( 
+
+
+    return (
         <Terminal
             ref={terminal}
                welcomeMessage={[
@@ -101,8 +104,8 @@ export default function Term() {
                     usage: 'help',
                     fn: () => {
                         return `
-                            ${Object.keys(owrs).map(cmd => `${cmd}${" ".repeat(12-cmd.length)} | ${owrs[cmd].description}${" ".repeat(39-owrs[cmd].description.length)} | ${owrs[cmd].usage}`).join('\n')}
-                            ${Object.keys(cmds).map(cmd => `${cmd}${" ".repeat(12-cmd.length)} | ${cmds[cmd].description}${" ".repeat(39-cmds[cmd].description.length)} | ${cmds[cmd].usage}`).join('\n')}
+                            ${Object.keys(owrs).map(cmd => `${cmd}${" ".repeat(12-cmd.length).toUpperCase()} | ${owrs[cmd].description}${" ".repeat(39-owrs[cmd].description.length)} | ${owrs[cmd].usage}`).join('\n')}
+                            ${Object.keys(cmds).map(cmd => `${cmd}${" ".repeat(12-cmd.length).toUpperCase()} | ${cmds[cmd].description}${" ".repeat(39-cmds[cmd].description.length)} | ${cmds[cmd].usage}`).join('\n')}
                         `
                     }
                 },
@@ -126,7 +129,5 @@ export default function Term() {
             scrollBehavior='auto'
             noDefaults 
  />
-
-
     )
 }

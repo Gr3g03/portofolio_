@@ -1,5 +1,4 @@
 /* eslint-disable import/no-anonymous-default-export */
-import getnp from "../../utils/spotify"
 export default {
     commands: {
         echo: {
@@ -11,47 +10,42 @@ export default {
             description: 'About Me.',
             usage: 'about',
             fn: () => {
-                return "About Me.\n---\nmale\n23\ndeputet\nsingledev\nmelophile\nweeb\n---\n"
+                return "About Me.\n---\nmale\n23\ndeputet\nsingledev\n---\n"
             }
         },
-        // twitter: {
-        //     description: 'Opens my Twitter Handle.',
-        //     usage: 'twitter',
-        //     fn: () => {
-        //         window.open('https://twitter.com/_asheeshh', '_blank')
-        //         return "opening twitter handle..."
-        //     }
-        // },
+        linkedin: {
+            description: 'Opens my Twitter Handle.',
+            usage: 'linkedin',
+            fn: () => {
+                window.open('https://www.linkedin.com/in/grigori-godole-b933b4aa/', '_blank')
+                return "opening twitter handle..."
+            }
+        },
         github: {
             description: 'Opens my GitHub Profile.',
-            usage: 'twitter',
+            usage: 'github',
             fn: () => {
                 window.open('https://github.com/Gr3g03', '_blank')
                 return "opening github account..."
             }
         },
-        // discord: {
-        //     description: 'Opens my Discord Account.',
-        //     usage: 'twitter',
-        //     fn: () => {
-        //         window.open('https://discordapp.com/users/784363251940458516', '_blank')
-        //         return "opening discord account..."
-        //     }
-        // },
         languages: {
             description: 'Languages I know.',
             usage: 'languages',
             fn: () => {
                 return `
                     these are the languages I know.\n---\n
-                    english          - 70%
-                    gen-z-langauge   - 00%
-                    javascript       - 60%
-                    typescript           - 60%
-                    html5            - 90%
-                    css3             - 80%
-                    nodejs             - 40%
-                    sql             - 10% - [learning]
+                    english         - 70%
+                    javascript      - 60%
+                    typescript      - 60%
+                    reactJs         - 60%
+                    reactTs         - 60%
+                    html5           - 90%
+                    css3            - 80%
+                    nodejs          - 40%
+                    sql             - 20%
+                    java            - 10%
+                    kotlin          - 10% - [learning]
                     nextjs          - 10% - [learning]\n---\n
                 `
             }
@@ -62,12 +56,10 @@ export default {
             fn: () => {
                 return `
                     these are the skills I have.\n---\n
-                    procrastination  - 100%
-                    coding           - 50%
-                    studying         - 10%
+                    coding           - 80%
+                    studying         - 60%
                     overthinking     - 100%
-                    social-skills    - 00%
-                    making-playlists - 100%\n---\n
+                    social-skills    - 100%
                 `
             }
         },
@@ -77,12 +69,10 @@ export default {
             fn: () => {
                 return `
                     Cool projects I have worked on.\n---\n
-                    'Gr3g03'                         | 'terminal portfolio'   | 'javascript'
-                    'octocolor'                       | 'github profile color' | 'javascript'
-                    'kanna-chan'                      | 'Discord-Bot'          | 'python'
-                    'wordinal'                        | 'wordle-on-terminal'   | 'javascript'
-                    'weeby.py'                        | 'API-wrapper'          | 'python'
-                    'gitbanner'                       | 'banner-generator'     | 'javascript'\n---\n
+                    'Gr3g03'         | 'portfolio'     | 'javascript'
+                    'hangman'        | 'hangman game'  |'javascript'
+                    'indxd'          | 'clone'         | 'javascript'
+                    'wordle'         | 'wordle game'   | 'javascript'\n---\n
                 `
             }
         },
@@ -105,19 +95,6 @@ export default {
                 return "opening repository..."
             }
         },
-        spotify: {
-            description: 'Get info about my recently played song.',
-            usage: 'spotify',
-            fn: async () => {
-                const item = await getnp()
-                return `
-                    Now Playing/Recently Played\n
-                    ---\n
-                    Song: ${item.song}\n
-                    Artist: ${item.artist}\n---\n
-                `
-            }
-        }
     },
     overwrites:{
         help: {
