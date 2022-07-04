@@ -23,7 +23,7 @@ export default function Term() {
                welcomeMessage={[
                 `Welcome!  ${ user}`,
                 "---",
-                "This is a terminal style website made with React.",
+                "This is a terminal style portofolio made with React.",
                 "---",
                 "Type 'help' to see a list of commands.",
                 "---",
